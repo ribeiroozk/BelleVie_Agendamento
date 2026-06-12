@@ -1,0 +1,1012 @@
+:root {
+    --rose-50: #fff5f8;
+    --rose-100: #ffe5ee;
+    --rose-200: #ffc8dc;
+    --rose-500: #d63384;
+    --rose-700: #a81f63;
+    --sand-50: #fffaf5;
+    --sand-100: #f8eadb;
+    --ink-900: #2b1f27;
+    --ink-700: #584a53;
+    --ink-500: #776b73;
+    --line: #eadce3;
+    --white: #ffffff;
+    --success: #16794f;
+    --danger: #b42318;
+    --shadow: 0 20px 60px rgba(83, 33, 59, .12);
+    --shadow-soft: 0 10px 30px rgba(83, 33, 59, .08);
+    --radius-lg: 30px;
+    --radius-md: 20px;
+    --radius-sm: 14px;
+    --max-width: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, var(--sand-50), #fff 30%, var(--rose-50));
+    color: var(--ink-900);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+code {
+    background: var(--rose-100);
+    border-radius: 8px;
+    padding: 2px 6px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px clamp(20px, 4vw, 64px);
+    background: rgba(255, 250, 245, .9);
+    border-bottom: 1px solid rgba(234, 220, 227, .7);
+    backdrop-filter: blur(18px);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: max-content;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--rose-500), #ef8daf);
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    box-shadow: var(--shadow-soft);
+}
+
+.brand strong {
+    display: block;
+    color: var(--rose-700);
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.brand small {
+    display: block;
+    color: var(--ink-500);
+    font-size: .78rem;
+    margin-top: 3px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-nav a {
+    border-radius: 999px;
+    color: var(--ink-700);
+    font-weight: 700;
+    padding: 10px 14px;
+    transition: .2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: var(--rose-100);
+    color: var(--rose-700);
+}
+
+.main-nav .nav-cta,
+.btn-primary {
+    background: linear-gradient(135deg, var(--rose-500), var(--rose-700));
+    color: var(--white);
+    box-shadow: var(--shadow-soft);
+}
+
+.main-nav .nav-cta:hover,
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--rose-700), #831a4e);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.nav-toggle {
+    display: none;
+    border: 0;
+    border-radius: 14px;
+    background: var(--rose-100);
+    color: var(--rose-700);
+    cursor: pointer;
+    font-size: 1.4rem;
+    height: 44px;
+    width: 44px;
+}
+
+main {
+    min-height: 70vh;
+}
+
+.hero-section,
+.section-block,
+.journey-section,
+.contact-band,
+.page-hero,
+.booking-shell,
+.dashboard-layout-v2,
+.content-page,
+.metrics-section {
+    width: min(var(--max-width), calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1.02fr .98fr;
+    gap: 40px;
+    align-items: center;
+    padding: 72px 0 40px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--rose-700);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.hero-content h1,
+.page-hero h1,
+.section-heading h2,
+.contact-band h2 {
+    color: var(--ink-900);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.25rem, 6vw, 4.8rem);
+    line-height: .98;
+    margin: 16px 0 20px;
+}
+
+.hero-content p,
+.page-hero p,
+.section-heading p,
+.contact-band p {
+    color: var(--ink-700);
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    max-width: 680px;
+}
+
+.hero-actions,
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.btn {
+    align-items: center;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 800;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 20px;
+    transition: .2s ease;
+}
+
+.btn-secondary {
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--rose-700);
+}
+
+.btn-secondary:hover {
+    border-color: var(--rose-200);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-1px);
+}
+
+.btn-wide {
+    width: 100%;
+}
+
+.trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.trust-row span {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-700);
+    font-size: .9rem;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.hero-card {
+    position: relative;
+    min-height: 420px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.hero-card img {
+    display: block;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.floating-panel {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(255, 255, 255, .88);
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 22px;
+    box-shadow: var(--shadow-soft);
+    padding: 18px;
+    backdrop-filter: blur(16px);
+}
+
+.metrics-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+    margin-bottom: 46px;
+}
+
+.metrics-section article,
+.service-card,
+.doctor-card,
+.timeline-grid article,
+.legal-card,
+.booking-aside,
+.booking-form-v2,
+.patient-panel,
+.appointments-panel {
+    background: rgba(255, 255, 255, .82);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.metrics-section article {
+    padding: 24px;
+}
+
+.metrics-section strong {
+    color: var(--rose-700);
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.metrics-section span {
+    color: var(--ink-700);
+    display: block;
+    margin-top: 8px;
+}
+
+.section-block,
+.journey-section,
+.contact-band,
+.content-page {
+    padding: 64px 0;
+}
+
+.soft-bg {
+    background: linear-gradient(135deg, rgba(255, 229, 238, .75), rgba(255, 250, 245, .9));
+    border-radius: var(--radius-lg);
+    padding-inline: clamp(18px, 3vw, 36px);
+}
+
+.section-heading {
+    margin-inline: auto;
+    margin-bottom: 28px;
+    max-width: 780px;
+    text-align: center;
+}
+
+.section-heading.align-left {
+    margin-inline: 0;
+    text-align: left;
+}
+
+.section-heading h2,
+.contact-band h2,
+.page-hero h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.cards-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.service-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.doctors-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card,
+.doctor-card {
+    padding: 24px;
+}
+
+.card-badge,
+.status-pill {
+    display: inline-flex;
+    width: fit-content;
+    background: var(--rose-100);
+    border-radius: 999px;
+    color: var(--rose-700);
+    font-size: .75rem;
+    font-weight: 800;
+    padding: 6px 10px;
+    text-transform: uppercase;
+}
+
+.service-card h3,
+.doctor-card h3,
+.timeline-grid h3,
+.legal-card h2,
+.appointment-card h3 {
+    color: var(--ink-900);
+    font-size: 1.15rem;
+    margin: 14px 0 8px;
+}
+
+.service-card p,
+.doctor-card p,
+.timeline-grid p,
+.legal-card p,
+.helper-text,
+.appointment-card p {
+    color: var(--ink-700);
+}
+
+.card-meta {
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding-top: 14px;
+}
+
+.card-meta span {
+    color: var(--ink-500);
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.timeline-grid article {
+    padding: 24px;
+}
+
+.timeline-grid article > span {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: var(--rose-500);
+    color: white;
+    font-weight: 900;
+}
+
+.avatar {
+    align-items: center;
+    background: linear-gradient(135deg, var(--rose-100), var(--sand-100));
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--rose-700);
+    display: inline-flex;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    height: 64px;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 64px;
+}
+
+.avatar.large {
+    height: 88px;
+    width: 88px;
+}
+
+.doctor-card small {
+    color: var(--ink-500);
+    display: block;
+    font-weight: 800;
+    margin-top: 12px;
+}
+
+.contact-band {
+    align-items: center;
+    background: var(--ink-900);
+    border-radius: var(--radius-lg);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    padding: clamp(28px, 5vw, 54px);
+}
+
+.contact-band h2,
+.contact-band p {
+    color: white;
+}
+
+.contact-band p {
+    opacity: .78;
+}
+
+.page-hero {
+    padding: 58px 0 24px;
+}
+
+.page-hero.compact {
+    max-width: 920px;
+    text-align: center;
+}
+
+.dashboard-hero {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    max-width: var(--max-width);
+    text-align: left;
+}
+
+.booking-shell {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    padding: 28px 0 72px;
+}
+
+.booking-aside,
+.booking-form-v2,
+.patient-panel,
+.appointments-panel {
+    padding: 24px;
+}
+
+.booking-aside {
+    align-self: start;
+    position: sticky;
+    top: 96px;
+}
+
+.booking-aside h2,
+.panel-header h2,
+.patient-panel h2 {
+    color: var(--ink-900);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.summary-card,
+.notice-card {
+    border-radius: var(--radius-sm);
+    padding: 16px;
+}
+
+.summary-card {
+    background: var(--rose-50);
+    border: 1px solid var(--rose-100);
+}
+
+.summary-card p + p {
+    margin-top: 10px;
+}
+
+.notice-card {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-100);
+    margin-top: 18px;
+}
+
+.notice-card p {
+    color: var(--ink-700);
+    margin-top: 8px;
+}
+
+.booking-form-v2 fieldset {
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+
+.booking-form-v2 legend {
+    color: var(--rose-700);
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.form-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.two-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+label {
+    color: var(--ink-700);
+    display: grid;
+    font-weight: 800;
+    gap: 8px;
+}
+
+input,
+select {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--ink-900);
+    min-height: 48px;
+    outline: none;
+    padding: 12px 14px;
+    transition: .2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--rose-500);
+    box-shadow: 0 0 0 4px rgba(214, 51, 132, .12);
+}
+
+.calendar-toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.calendar-toolbar .btn {
+    min-height: 40px;
+    padding: 8px 14px;
+}
+
+.calendar-toolbar .btn:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+    transform: none;
+}
+
+#calendar-label {
+    color: var(--ink-700);
+    font-weight: 900;
+    text-align: center;
+}
+
+.date-grid,
+.time-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.date-grid {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.time-grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 16px;
+}
+
+.date-option,
+.time-option {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    color: var(--ink-700);
+    cursor: pointer;
+    font-weight: 800;
+    min-height: 58px;
+    padding: 10px;
+    transition: .2s ease;
+}
+
+.date-option {
+    display: grid;
+    gap: 2px;
+}
+
+.date-option span,
+.date-option small {
+    color: var(--ink-500);
+    font-size: .78rem;
+    text-transform: capitalize;
+}
+
+.date-option strong {
+    color: var(--ink-900);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.date-option:hover:not(:disabled),
+.time-option:hover:not(:disabled),
+.date-option.selected,
+.time-option.selected {
+    background: var(--rose-500);
+    border-color: var(--rose-500);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.date-option.selected span,
+.date-option.selected strong,
+.date-option.selected small {
+    color: white;
+}
+
+.date-option:disabled,
+.time-option:disabled {
+    background: #f7f1f4;
+    color: #b8a8b1;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.check-line {
+    align-items: flex-start;
+    display: flex;
+    font-weight: 600;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.check-line input {
+    min-height: auto;
+    margin-top: 6px;
+    width: auto;
+}
+
+.form-feedback {
+    display: none;
+    border-radius: 14px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    padding: 12px 14px;
+}
+
+.form-feedback.show {
+    display: block;
+}
+
+.form-feedback.error {
+    background: #fff0ef;
+    color: var(--danger);
+}
+
+.form-feedback.success {
+    background: #ecfdf5;
+    color: var(--success);
+}
+
+.dashboard-layout-v2 {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+    padding: 22px 0 72px;
+}
+
+.patient-panel {
+    align-self: start;
+    text-align: center;
+}
+
+.patient-panel p,
+.panel-header p {
+    color: var(--ink-700);
+}
+
+.mini-stats {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.mini-stats span {
+    background: var(--rose-50);
+    border: 1px solid var(--rose-100);
+    border-radius: 14px;
+    padding: 12px;
+}
+
+.panel-header {
+    align-items: center;
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.panel-header select {
+    max-width: 180px;
+}
+
+.appointments-list {
+    display: grid;
+    gap: 14px;
+}
+
+.appointment-card {
+    align-items: center;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1.2fr 1.2fr auto;
+    padding: 18px;
+}
+
+.appointment-card.is-cancelled {
+    opacity: .62;
+}
+
+.appointment-info {
+    display: grid;
+    gap: 4px;
+}
+
+.appointment-info span {
+    color: var(--ink-700);
+}
+
+.appointment-actions .btn {
+    min-height: 40px;
+}
+
+.appointment-actions .btn:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.empty-state {
+    background: var(--rose-50);
+    border: 1px dashed var(--rose-200);
+    border-radius: 18px;
+    display: none;
+    padding: 28px;
+    text-align: center;
+}
+
+.empty-state p {
+    color: var(--ink-700);
+    margin: 6px 0 18px;
+}
+
+.content-page {
+    max-width: 900px;
+}
+
+.legal-card {
+    padding: clamp(22px, 4vw, 42px);
+}
+
+.legal-card h2:not(:first-child) {
+    margin-top: 24px;
+}
+
+.site-footer {
+    background: #211820;
+    color: white;
+    padding: 46px clamp(20px, 4vw, 64px) 24px;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+.brand-footer .brand-mark {
+    box-shadow: none;
+}
+
+.brand-footer small,
+.site-footer p {
+    color: rgba(255, 255, 255, .68);
+}
+
+.site-footer h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.site-footer a:not(.brand) {
+    color: rgba(255, 255, 255, .74);
+    display: block;
+    margin: 8px 0;
+}
+
+.site-footer a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 32px auto 0;
+    max-width: var(--max-width);
+    padding-top: 18px;
+}
+
+.footer-bottom span,
+.footer-bottom a {
+    color: rgba(255, 255, 255, .68);
+}
+
+@media (max-width: 1020px) {
+    .hero-section,
+    .booking-shell,
+    .dashboard-layout-v2 {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid,
+    .timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking-aside {
+        position: static;
+    }
+}
+
+@media (max-width: 800px) {
+    .nav-toggle {
+        display: grid;
+        place-items: center;
+    }
+
+    .main-nav {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 78px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: 14px;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        border-radius: 14px;
+    }
+
+    .metrics-section,
+    .doctors-grid,
+    .two-cols,
+    .footer-grid,
+    .appointment-card {
+        grid-template-columns: 1fr;
+    }
+
+    .date-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-band,
+    .dashboard-hero,
+    .panel-header,
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-header {
+        padding-inline: 16px;
+    }
+
+    .hero-section,
+    .section-block,
+    .journey-section,
+    .contact-band,
+    .page-hero,
+    .booking-shell,
+    .dashboard-layout-v2,
+    .content-page,
+    .metrics-section {
+        width: min(100% - 24px, var(--max-width));
+    }
+
+    .service-grid,
+    .timeline-grid,
+    .date-grid,
+    .time-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card,
+    .hero-card img {
+        min-height: 300px;
+    }
+}
